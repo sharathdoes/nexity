@@ -5,7 +5,7 @@
 
 .NotificationsContainer{
           width: 18pc;
-          height: 50vh;
+          height: 100vh;
           background-color: white;
           margin-top: 20px;
           border-radius: 20px;
@@ -35,4 +35,13 @@
           object-fit: cover;
           border-radius: 10px;
 }
+
+  
+.NotificationsContainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Add any additional styles you need */
 

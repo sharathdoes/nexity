@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBXphSl7uRz6kqv8vVWPxVKyKYeHT4OB4k",
-  authDomain: "social-media-9856b.firebaseapp.com",
-  projectId: "social-media-9856b",
-  storageBucket: "social-media-9856b.appspot.com",
-  messagingSenderId: "496910700238",
-  appId: "1:496910700238:web:c29cadb877d4d9a2d7ca9f"
+  apiKey: "AIzaSyCXpyBJPWbe5mTE4zT5XeVW_Ynl4YOieQU",
+  authDomain: "vnr-cse-csbs-portal.firebaseapp.com",
+  projectId: "vnr-cse-csbs-portal",
+  storageBucket: "vnr-cse-csbs-portal.appspot.com",
+  messagingSenderId: "649792794328",
+  appId: "1:649792794328:web:5fac58c1faa95e8a6031ad",
 };
 
 // Initialize Firebase

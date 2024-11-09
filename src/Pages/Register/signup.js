@@ -23,9 +23,11 @@ export default function Signup() {
     signup(dispatch, { email, password, username, phonenumber });
   }
 
+
   if (userDetails?.Status === 'Pending') {
     navigator("/verify/email");
   }
+  
 
   return (
     <div className='mainContainerForsignup'>
