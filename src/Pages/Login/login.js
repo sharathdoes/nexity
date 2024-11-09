@@ -13,8 +13,8 @@ export default function Login() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    let username=email
-    login(dispatch, { username, password }).then(() => {
+    
+    login(dispatch, { email, password }).then(() => {
       // Navigate to the home page after a successful login
       console.log("hiin login")
       navigate('/');

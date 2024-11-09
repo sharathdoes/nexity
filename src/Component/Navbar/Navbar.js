@@ -33,14 +33,13 @@ export default function Navbar() {
       <div className='IconsContainer'>
         <img src={`${Notifications}`} className="Icons" alt="" />
         
-        {/* Link to /chat on click of the message icon */}
-        <Link to="http://localhost:5173/chat">
-          <img src={`${Message}`} className="Icons" alt="" />
-        </Link>
+        {/* Use <a> for external link */}
+        <a href="http://localhost:5173/chat">
+          <img src={`${Message}`} className="Icons" alt="Chat" />
+        </a>
 
         <Link to={`/Profile/${id}`}>
-          <div className=""style={{ display: 'flex', alignItems: 'center' }}>
-            {/* Display the user profile image if available, else show the fallback UserCircle icon */}
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             {user?.other?.profile ? (
               <img 
                 src={`${user?.other?.profile}`} 
@@ -48,7 +47,7 @@ export default function Navbar() {
                 alt="Profile" 
               />
             ) : (
-              <FaUserCircle size={30} style={{ color: 'black' }} /> // Bigger size and black color
+              <FaUserCircle size={30} style={{ color: 'black' }} />
             )}
             <p style={{ marginLeft: '5px' }}>{user?.other?.username}</p>
           </div>
