@@ -10,14 +10,14 @@ dotenv.config();
 
 mongoose.connect(process.env.MONGODB).then(()=>
 console.log("DB connection successfull")).catch(()=>{
-          console.log("Some error occured")
+          console.log("Some erruor occured")
 })
 
 app.use(cors({
    
         origin: "http://localhost:3001", // Allow requests from React app
         methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
+        
       
 }));
 app.use(express.json());

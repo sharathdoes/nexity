@@ -1,0 +1,18 @@
+### Login Request
+POST http://localhost:3000/api/user/create/user
+Content-Type: application/json
+
+{
+  "email": "luckylekhan23@gmail.com",
+"password": "Qwerty@123",
+"phonenumber": "5623562356"
+,"username": "rithvik9"
+}
+### Login Request
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+  "username": "sahithuser17",
+  "password": "Sahith@17"
+}

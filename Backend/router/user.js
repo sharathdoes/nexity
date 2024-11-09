@@ -12,15 +12,9 @@ const nodemailer = require('nodemailer');
 const ResetToken = require("../Modals/ResetToken");
 const crypto = require("crypto");
 router.post("/create/user" ,
-    body('email').isEmail(),
-    body('password').isLength({ min: 6 }) ,
-    body('username').isLength({ min: 3 }) ,
-    body('phonenumber').isLength({ min: 10}) ,
+
     async(req , res)=>{
-          const error = validationResult(req);
-          if(!error.isEmpty()){
-                    return res.status(400).json("some error occured")
-          }
+         
         //   try {
         
           let user = await User.findOne({email:req.body.email});
@@ -114,21 +108,16 @@ router.post("/verify/email" , async(req , res)=>{
 
 //Login
 router.post("/login" ,
-    body('email').isEmail(),
-    body('password').isLength({ min: 6 }) ,
+  
     async(req , res)=>{
-        //   const error = validationResult(req);
-        //   if(!error.isEmpty()){
-        //             return res.status(400).json("some error occured")
-        //   }
-
-        //   try {
-          const user = await User.findOne({email:req.body.email});
-          if(!user){
+        
+        console.log(req.body);
+        let user = await User.findOne({username:req.body.username});
+        if(!user){
                   return res.status(400).json("User doesn't found")  
           }
 
-          const Comparepassword = await bcrypt.compare(req.body.password , user.password);
+          const Comparepassword =  req.body.password ===user.password
           if(!Comparepassword){
                     return res.status(400).json("Password error")
           }

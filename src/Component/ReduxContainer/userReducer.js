@@ -11,11 +11,18 @@ export const userReducer = createSlice({
                     loginStart:(state)=>{
                               state.isFetching = true
                     },
-                    loginSuccess:(state , action)=>{
-                              state.isFetching = false;
-                              state.user = action.payload
-                              state.user.other.verifed  = true;
+                    loginSuccess: (state, action) => {
+                        state.isFetching = false;
+                        state.user = action.payload;
+                    
+                        // Ensure `other` exists on `state.user`
+                        if (!state.user.other) {
+                            state.user.other = {};  // Initialize `other` if undefined
+                        }
+                        
+                        state.user.other.verifed = true;
                     },
+                    
                     loginFailure:(state)=>{
                               state.isFetching = false;
                               state.error = true

@@ -29,7 +29,9 @@ export const signup = async (dispatch, user) => {
   try {
     const res = await axios.post(`${BASE_URL}/create/user`, user);
     dispatch(loginSuccess(res.data));
+    console.log(res.data,"hi res");
   } catch (error) {
     dispatch(loginFailure());
+    console.log(error)
   }
 };

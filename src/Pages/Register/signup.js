@@ -21,6 +21,8 @@ export default function Signup() {
 
     // Proceed with signup without handling file upload
     signup(dispatch, { email, password, username, phonenumber });
+    console.log("yes")
+    console.log(userDetails?.Status)
   }
 
   if (userDetails?.Status === 'Pending') {

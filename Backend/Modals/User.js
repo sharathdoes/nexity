@@ -30,7 +30,11 @@ const UserSchema = new mongoose.Schema({
                     type:Boolean,
                     required:true,
                     default:false
-          }
+          },
+          role: { type: String},
+          leetcodeInfo: [Object],
+          githubInfo: [Object],
+          linkedinInfo: [Object],
 })
 
-module.exports = mongoose.model("Student" , UserSchema);
+module.exports = mongoose.model("userdds" , UserSchema);

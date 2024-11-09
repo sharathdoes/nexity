@@ -1,0 +1,189 @@
+POST http://127.0.0.1:5000/accomplices 
+Content-Type: application/json
+
+{
+  "_id": {
+    "$oid": "672f213f9882f5c5019d8c7a"
+  },
+  "username": "sahithuser17",
+  "password": "Sahith@17",
+  "role": "Junior",
+  "leetcodeInfo": [
+    {
+      "userContestDetails": {
+        "attendedContestsCount": 7,
+        "rating": 1475.485,
+        "globalRanking": 318148,
+        "totalParticipants": 622576,
+        "topPercentage": 51.7
+      }
+    }
+  ],
+  "githubInfo": [
+    {
+      "repositories": [
+        {
+          "id": 690922610,
+          "name": "html-portfolio",
+          "url": "https://github.com/SahithTinku1/html-portfolio",
+          "description": "my first project",
+          "language": "HTML"
+        },
+        {
+          "id": 735378644,
+          "name": "rockpaperscissor",
+          "url": "https://github.com/SahithTinku1/rockpaperscissor",
+          "description": "my first weddev project",
+          "language": "JavaScript"
+        },
+        {
+          "id": 854411755,
+          "name": "Autobots-Roll-On",
+          "url": "https://github.com/SahithTinku1/Autobots-Roll-On",
+          "description": "Automation Projects",
+          "language": "Python"
+        }
+      ]
+    }
+  ],
+  "linkedinInfo": [
+    {
+      "id": 1039969391,
+      "urn": "ACoAAD38rG8Bed8xs9nXxdeRveO7A520EaWTLyw",
+      "username": "sahith-tinku-17b34a250",
+      "firstName": "Sahith",
+      "lastName": "tinku",
+      "isCreator": false,
+      "isOpenToWork": true,
+      "isHiring": false,
+      "profilePicture": "",
+      "backgroundImage": null,
+      "summary": "",
+      "headline": "--",
+      "geo": {
+        "country": "India",
+        "city": "Hyderabad, Telangana",
+        "full": "Hyderabad, Telangana, India"
+      },
+      "languages": null,
+      "educations": [
+        {
+          "start": {
+            "year": 2022,
+            "month": 11,
+            "day": 0
+          },
+          "end": {
+            "year": 2026,
+            "month": 4,
+            "day": 0
+          },
+          "fieldOfStudy": "Computer Science",
+          "degree": "Bachelor of Technology - BTech",
+          "grade": "",
+          "schoolName": "VNR Vignana Jyothi Institute of Engineering and Technology (VNRVJIET)",
+          "description": "",
+          "activities": "",
+          "url": "https://www.linkedin.com/school/vnrvjiethyd/",
+          "schoolId": "15129595"
+        }
+      ],
+      "position": [
+        {
+          "companyId": 79890975,
+          "companyName": "Eternal Enterprise Technologies",
+          "companyUsername": "eternal-enterprise-technologies",
+          "companyURL": "https://www.linkedin.com/company/eternal-enterprise-technologies/",
+          "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHanmuPtHS6fw/company-logo_400_400/company-logo_400_400/0/1718724998477/eternal_enterprise_technologies_logo?e=1739404800&v=beta&t=d2JdRG4eG1AlfXZr1eFveckZEUNZyO69JLJrmyWWDos",
+          "companyIndustry": "Information Technology & Services",
+          "companyStaffCountRange": "11 - 50",
+          "title": "Intern",
+          "multiLocaleTitle": {
+            "en_US": "Intern"
+          },
+          "multiLocaleCompanyName": {
+            "en_US": "Eternal Enterprise Technologies"
+          },
+          "location": "Rajasthan ajmeer",
+          "description": "",
+          "employmentType": "Part-time",
+          "start": {
+            "year": 2024,
+            "month": 3,
+            "day": 0
+          },
+          "end": {
+            "year": 0,
+            "month": 0,
+            "day": 0
+          }
+        }
+      ],
+      "fullPositions": [
+        {
+          "companyId": 79890975,
+          "companyName": "Eternal Enterprise Technologies",
+          "companyUsername": "eternal-enterprise-technologies",
+          "companyURL": "https://www.linkedin.com/company/eternal-enterprise-technologies/",
+          "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHanmuPtHS6fw/company-logo_400_400/company-logo_400_400/0/1718724998477/eternal_enterprise_technologies_logo?e=1739404800&v=beta&t=d2JdRG4eG1AlfXZr1eFveckZEUNZyO69JLJrmyWWDos",
+          "companyIndustry": "Information Technology & Services",
+          "companyStaffCountRange": "11 - 50",
+          "title": "Intern",
+          "multiLocaleTitle": {
+            "en_US": "Intern"
+          },
+          "multiLocaleCompanyName": {
+            "en_US": "Eternal Enterprise Technologies"
+          },
+          "location": "Rajasthan ajmeer",
+          "description": "",
+          "employmentType": "Part-time",
+          "start": {
+            "year": 2024,
+            "month": 3,
+            "day": 0
+          },
+          "end": {
+            "year": 0,
+            "month": 0,
+            "day": 0
+          }
+        }
+      ],
+      "skills": [
+        {
+          "name": "Engineering",
+          "passedSkillAssessment": false
+        }
+      ],
+      "givenRecommendation": null,
+      "givenRecommendationCount": 0,
+      "receivedRecommendation": null,
+      "receivedRecommendationCount": 0,
+      "courses": null,
+      "certifications": null,
+      "honors": null,
+      "projects": {
+        "total": 0,
+        "items": null
+      },
+      "volunteering": null,
+      "supportedLocales": [
+        {
+          "country": "US",
+          "language": "en"
+        }
+      ],
+      "multiLocaleFirstName": {
+        "en": "Sahith"
+      },
+      "multiLocaleLastName": {
+        "en": "tinku"
+      },
+      "multiLocaleHeadline": {
+        "en": "--"
+      }
+    }
+  ],
+  "__v": 0
+}
