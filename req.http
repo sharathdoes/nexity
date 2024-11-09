@@ -6,7 +6,7 @@ Content-Type: application/json
     "$oid": "672f213f9882f5c5019d8c7a"
   },
   "username": "sahithuser17",
-  "password": "Sahith@17",
+ 
   "role": "Junior",
   "leetcodeInfo": [
     {

@@ -17,6 +17,7 @@ export default function Login() {
     login(dispatch, { username, password }).then(() => {
       // Navigate to the home page after a successful login
       console.log("hiin login")
+      
       navigate('/');
     }).catch((err) => {
       console.error("Login error", err);

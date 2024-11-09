@@ -27,17 +27,28 @@ export default function ProfileRightbar() {
 
   const [users , setUsers] = useState([]);
   useEffect(() => {
-    const getuser = async()=>{
+    const getuser = async () => {
       try {
-        const res  = await axios.get(`http://localhost:3000/api/user/all/user/${idforSuggest}`)
-        setUsers(res.data);
+        console.log(user.other, "lanj");
+        const res = await axios.post(
+          `http://127.0.0.1:5000/accomplices`,
+          user.other,
+          {
+            headers: {
+              'Content-Type': 'application/json',  // Explicitly set content type to JSON
+            },
+          }
+        );
+        console.log(res.data, "py");
+        setUsers(res.data.recommended_accomplices);
       } catch (error) {
-        console.log("Some error occured")
+        console.error("Error occurred:", error.response ? error.response.data : error.message);
       }
-    }
+    };
+    
     getuser();
   }, [])
-  console.log(users)
+  console.log(users,"lik")
   
   return (
     <div className='Profilerightbar'>
@@ -61,8 +72,8 @@ export default function ProfileRightbar() {
 
       <div className='rightcontainer2'>
         <h3 style={{textAlign:"start" , marginLeft:"10px"}}>Suggested for you</h3>
-        {users.map((item)=>(
-          <Follow userdetails={item}/>
+        {users.map((item, ind)=>(
+          <Follow userdetails={item} key={ind} git={item}/>
           ))}
         
       </div>
