@@ -12,6 +12,118 @@ CORS(app)
 with open('next.json', 'r', encoding='utf-8') as file:
     users = json.load(file)
 
+
+def combine_senior_profile_info(user):
+    """
+    Combines senior user profile information from LinkedIn, GitHub, and LeetCode
+    """
+    try:
+        # LinkedIn info
+        linkedin_info = user.get('linkedinInfo', [{}])[0]
+        linkedin_bio = linkedin_info.get('summary', '') + ' ' + linkedin_info.get('headline', '')
+        
+        # GitHub repositories
+        github_info = user.get('githubInfo', [{}])[0].get('repositories', [])
+        github_repos = " ".join([
+            f"{repo.get('description', '')} {repo.get('language', '')}"
+            for repo in github_info
+        ])
+        
+        # LeetCode info
+        leetcode_info = user.get('leetcodeInfo', [{}])[0].get('userContestDetails', {})
+        leetcode_summary = f"LeetCode rating: {leetcode_info.get('rating', '')}, contests: {leetcode_info.get('attendedContestsCount', '')}"
+        
+        return f"{linkedin_bio} {github_repos} {leetcode_summary}".strip()
+    except Exception as e:
+        print(f"Error in combine_senior_profile_info: {str(e)}")
+        return ""
+
+def combine_junior_profile(guidance_request):
+    """
+    Combines junior user's guidance request information
+    """
+    try:
+        learning_goals = " ".join(guidance_request.get("learningGoals", {}).get("primaryTopics", []))
+        specific_skills = " ".join(guidance_request.get("learningGoals", {}).get("specificSkills", []))
+        tech_experience = " ".join(guidance_request.get("backgroundInfo", {}).get("technicalExperience", []))
+        strengths = " ".join(guidance_request.get("backgroundInfo", {}).get("strengths", []))
+        preferred_skills = " ".join(
+            guidance_request.get("expectationsFromSenior", {})
+            .get("preferredSeniorProfile", {})
+            .get("specificSkills", [])
+        )
+        
+        return f"Learning goals: {learning_goals}, Specific skills: {specific_skills}, Tech experience: {tech_experience}, Strengths: {strengths}, Preferred mentor skills: {preferred_skills}"
+    except Exception as e:
+        print(f"Error in combine_junior_profile: {str(e)}")
+        return ""
+
+@app.route('/findmentors', methods=['POST'])
+def find_mentors():
+    try:
+        # Get guidance request from POST data
+        guidance_request = request.json
+        
+        if not guidance_request:
+            return jsonify({"error": "No guidance request data provided"}), 400
+            
+        # Generate embeddings for all users
+        user_embeddings = []
+        valid_users = []
+        
+        for user in users:
+            profile_text = combine_senior_profile_info(user)
+            if profile_text.strip():  # Only include users with valid profile text
+                embedding = model.encode(profile_text)
+                user_embeddings.append(embedding)
+                valid_users.append(user)
+        
+        # Generate embedding for junior's guidance request
+        junior_profile_text = combine_junior_profile(guidance_request)
+        junior_embedding = model.encode(junior_profile_text)
+        
+        # Calculate similarity scores
+        similarity_scores = []
+        for idx, user in enumerate(valid_users):
+            score = cosine_similarity([junior_embedding], [user_embeddings[idx]])[0][0]
+            similarity_scores.append({
+                "username": user["username"],
+                "similarity_score": float(score),
+                "profile_info": {
+                    "leetcode_rating": user.get("leetcodeInfo", [{}])[0].get("userContestDetails", {}).get("rating"),
+                    "contests_attended": user.get("leetcodeInfo", [{}])[0].get("userContestDetails", {}).get("attendedContestsCount"),
+                    "github_repos": [
+                        {
+                            "name": repo.get("name"),
+                            "language": repo.get("language"),
+                            "description": repo.get("description")
+                        }
+                        for repo in user.get("githubInfo", [{}])[0].get("repositories", [])
+                    ],
+                    "linkedin_headline": user.get("linkedinInfo", [{}])[0].get("headline")
+                }
+            })
+        
+        # Sort by similarity score and get top 3
+        sorted_matches = sorted(similarity_scores, key=lambda x: x["similarity_score"], reverse=True)[:3]
+        
+        result = {
+            "junior_username": guidance_request.get("username"),
+            "recommended_mentors": sorted_matches,
+            "matching_criteria": {
+                "learning_goals": guidance_request.get("learningGoals", {}).get("primaryTopics", []),
+                "preferred_skills": guidance_request.get("expectationsFromSenior", {})
+                    .get("preferredSeniorProfile", {})
+                    .get("specificSkills", [])
+            }
+        }
+        
+        return jsonify(result)
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+   
+
 def combine_profile_info(user):
     """
     Combines relevant information from LinkedIn, GitHub, and LeetCode profiles

@@ -17,7 +17,7 @@ export default function MainPost() {
   useEffect(() => {
    const getPost = async()=>{
     try {
-      const res = await axios.get(`http://localhost:3000/api/user/flw/${id}` , {
+      const res = await axios.get(`http://localhost:3000/api/user/flw/` , {
         headers:{
           token:accesstoken
         }

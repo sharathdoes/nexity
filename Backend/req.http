@@ -1,5 +1,5 @@
 ### Login Request
-POST http://localhost:3000/api/user/create/user
+POST http://localhost:3000:3000/api/user/create/user
 Content-Type: application/json
 
 {
@@ -9,10 +9,186 @@ Content-Type: application/json
 ,"username": "rithvik9"
 }
 ### Login Request
-POST http://localhost:3000/api/user/login
+GET http://localhost:3000:3000/api/user/flw
 Content-Type: application/json
 
 {
-  "username": "sahithuser17",
-  "password": "Sahith@17"
+  
+}
+
+
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Introduction to Data Structures",
+    "image": "https://example.com/dsa_image1.jpg",
+    "video": "https://example.com/dsa_video1.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Binary Search: A Deep Dive",
+    "image": "https://example.com/dsa_image2.jpg",
+    "video": "https://example.com/dsa_video2.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Sorting Algorithms Explained",
+    "image": "https://example.com/dsa_image3.jpg",
+    "video": "https://example.com/dsa_video3.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Dynamic Programming Concepts",
+    "image": "https://example.com/dsa_image4.jpg",
+    "video": "https://example.com/dsa_video4.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Graph Algorithms Overview",
+    "image": "https://example.com/dsa_image5.jpg",
+    "video": "https://example.com/dsa_video5.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Introduction to Web Development",
+    "image": "https://example.com/dev_image1.jpg",
+    "video": "https://example.com/dev_video1.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Building a REST API with Node.js",
+    "image": "https://example.com/dev_image2.jpg",
+    "video": "https://example.com/dev_video2.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Frontend Development with React",
+    "image": "https://example.com/dev_image3.jpg",
+    "video": "https://example.com/dev_video3.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "JavaScript: The Essential Guide",
+    "image": "https://example.com/dev_image4.jpg",
+    "video": "https://example.com/dev_video4.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Node.js Basics for Beginners",
+    "image": "https://example.com/dev_image5.jpg",
+    "video": "https://example.com/dev_video5.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Understanding Asynchronous JavaScript",
+    "image": "https://example.com/dev_image6.jpg",
+    "video": "https://example.com/dev_video6.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "The Basics of SQL Databases",
+    "image": "https://example.com/dev_image7.jpg",
+    "video": "https://example.com/dev_video7.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Version Control with Git and GitHub",
+    "image": "https://example.com/dev_image8.jpg",
+    "video": "https://example.com/dev_video8.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Building Full-Stack Applications with MERN",
+    "image": "https://example.com/dev_image9.jpg",
+    "video": "https://example.com/dev_video9.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Introduction to Cloud Computing",
+    "image": "https://example.com/dev_image10.jpg",
+    "video": "https://example.com/dev_video10.mp4"
+
+}
+### Login Request
+
+POST http://localhost:3000/api/post/user/post
+Content-Type: application/json
+
+{
+    "title": "Building Web Apps with Django",
+    "image": "https://example.com/dev_image11.jpg",
+    "video": "https://example.com/dev_video11.mp4"
 }

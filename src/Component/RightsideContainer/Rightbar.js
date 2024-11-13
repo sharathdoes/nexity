@@ -28,7 +28,7 @@ export default function Rightbar() {
   return (
     <div className='rightbar'>
       <div className='rightcontainer2'>
-        <h3 style={{textAlign:"start" , marginLeft:"10px"}}>Suggested for you</h3>
+        <h3 style={{textAlign:"start" , marginLeft:"10px"}}>Users on nexity</h3>
         {users.map((item)=>(
           <Follow userdetails={item}/>
           ))}

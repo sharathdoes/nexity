@@ -237,21 +237,15 @@ router.put("/following/:id" , verifyToken , async(req , res)=>{
 })
 
 //Fetch post from following
-router.get("/flw/:id" , verifyToken , async(req , res)=>{
+router.get("/flw", async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
-        const followersPost = await Promise.all(
-            user.Following.map((item)=>{
-                return Post.find({user:item})
-            })
-        )
-        const userPost = await Post.find({user:user._id});
-
-        res.status(200).json(userPost.concat(...followersPost));
+        const userPost = await Post.find().exec();  // Using .exec() instead of .toArray()
+        res.status(200).json(userPost);
     } catch (error) {
-        return res.status(500).json("Internal server error")
+        return res.status(500).json({ message: "Internal server error", error: error.message });
     }
-})
+});
+
 
 //Update User Profile
 router.put("/update/:id" , verifyToken , async(req , res)=>{

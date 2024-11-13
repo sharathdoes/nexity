@@ -4,11 +4,11 @@ const User = require("../Modals/User");
 const { verifyToken } = require("./verifytoken");
 
 //Create Post
-router.post("/user/post" , verifyToken , async(req , res)=>{
+router.post("/user/post"  , async(req , res)=>{
           try {
                    let {title , image , video} = req.body;
                    let newpost = new Post({
-                    title , image , video , user:req.user.id
+                    title , image , video , user:"672f576333ec2ea4aaa2af06"
                    })
                    const post = await newpost.save()
                    res.status(200).json(post)

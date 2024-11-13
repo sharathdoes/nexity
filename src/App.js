@@ -17,6 +17,8 @@ import Forgotpassword from './Pages/Forgotpassword/Forgotpassword';
 import { useState } from "react";
 import { AppContext, socket } from "./context/appContext";
 import Chat from "./Pages/chat/chat"
+import ProfileForm from "./Pages/ment"
+import ErrorBoundary from "./errorbound.js"
 function App() {
   const userDetails = useSelector((state)=>state.user);
   let user = userDetails?.user
@@ -39,8 +41,11 @@ function App() {
         <Route path="/chat" element={   <Chat />}></Route>
         <Route path="/verify/email" element={user?.Status === 'Pending' ? <Verifyemail/> : user?.other?.verifed === true ? <Navigate to={"/"} replace={true}/> : <Login/>}></Route>
         <Route path="/forgot/password" element={<Forgotpassword/>}></Route>
-        <Route path="/reset/password" element={<Resetpassword/>}></Route>
          
+        <Route path="/reset/password" element={<Resetpassword/>}></Route>
+        <Route path="/mentorship" element={   <ErrorBoundary>
+      <ProfileForm />
+    </ErrorBoundary>}></Route>
     </Routes>
   </BrowserRouter>
   </AppContext.Provider>
